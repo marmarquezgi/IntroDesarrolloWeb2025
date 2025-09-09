@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Isadora Duncan — Bailarina</title>
+
+  <style>
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; background:#0c2a45; color:#f2f2f2; }
+    p { line-height:1.6; }
+    h1 { color:#d0dc00; font-size:2rem; margin:.5rem 0; }
+    h2 { color:#d0dc00; font-size:1.5rem; margin-top:1.25rem; }
+    h3 { color:#d0dc00; font-size:1.25rem; margin-top:1rem; }
+
+    #hero-title { text-shadow:0 1px 3px rgba(0,0,0,.35); letter-spacing:.5px; }
+    .container { max-width: 1000px; margin: 0 auto; padding: 1rem; }
+    .header { background:#0f3456; }
+    .brand { display:flex; align-items:center; gap:.75rem; padding:.5rem 0; }
+    .brand-logo { width:48px; height:48px; border-radius:8px; object-fit:cover; box-shadow:0 2px 8px rgba(0,0,0,.25); }
+
+    .nav { background:#10385f; }
+    .nav-list { list-style:none; padding:.5rem 0; margin:0; display:flex; gap:.5rem; flex-wrap:wrap; }
+    .nav-link { text-decoration:none; font-weight:600; padding:.35rem .6rem; border-radius:10px; }
+
+    .main { background:#0f3456; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.25); }
+    .section { padding:1rem; margin-bottom:1rem; }
+    .section-title { display:flex; align-items:center; gap:.5rem; }
+    .badge { font-size:.8rem; background:#133d61; color:#d0dc00; padding:.1rem .5rem; border-radius:999px; }
+
+    .hero { display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; align-items:center; }
+    .hero-img { width:100%; height:auto; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.35); }
+
+    .grid { display:grid; gap:1rem; grid-template-columns: repeat(12, 1fr); }
+    .col-8 { grid-column: span 8; }
+    .col-4 { grid-column: span 4; }
+
+    .card, .article, .list-box, .list-box--dotted {
+      background:#10385f;
+      border-radius:10px;
+      padding:1rem;
+      box-shadow:0 2px 6px rgba(0,0,0,.25);
+      margin-bottom:1rem;
+    }
+
+    .figure { text-align:center; }
+    .figure img { max-width:100%; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,.35); }
+    .figcaption { font-size:.9rem; color:#e5eefb; margin-top:.35rem; }
+
+    .underline { text-decoration: underline; }
+    .accent { color:#d0dc00; font-weight:700; }
+    .muted { color:#d6e6ff; }
+
+    .list { padding-left:1.2rem; }
+    .list li { margin:.35rem 0; }
+
+    .hr { border:0; margin:2rem 0; } 
+
+    .form { display:grid; gap:.75rem; }
+    .label { font-weight:700; }
+    .input { width:100%; padding:.55rem .65rem; border-radius:10px; outline:none; background:#0f3456; color:#f2f2f2; box-shadow:0 1px 4px rgba(0,0,0,.25) inset; }
+    .input:focus { box-shadow:0 0 6px rgba(208,220,0,.8); }
+    .form-row { display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; }
+    .textarea { resize: vertical; min-height: 110px; }
+
+    .btn { display:inline-block; background:#d0dc00; color:#0c2a45; padding:.5rem .8rem; border-radius:12px; cursor:pointer; text-decoration:none; font-weight:bold; }
+    .btn:hover { background:#b5bf00; }
+
+    .footer { margin-top:1.5rem; padding:1rem; background:#0b2a44; color:#e7e7e7; }
+    .footer a { color:#a8c8ff; }
+
+    nav a { color:#f2f2f2; }
+    nav a:hover { background:#133d61; }
+
+    ul > li { list-style-type: square; }
+    h2 + p {
+      margin-top:0;
+      background-color:#10385f;
+      padding:.5rem;
+      border-radius:8px;
+    }
+
+    /* ===== Responsivo ===== */
+    @media (max-width: 700px) {
+      .main { background:#fffbdd; color:#0c2a45; }
+      .article, .card, .list-box, .list-box--dotted, .input { background:#fffbe6; color:#0c2a45; }
+      .hero { grid-template-columns:1fr; }
+      .form-row { grid-template-columns:1fr; }
+      .col-8, .col-4 { grid-column: span 12; }
+    }
+    @media (max-width: 400px) {
+      .hide-on-small { display:none; }  
+    }
+    @media (max-width: 300px) {
+      .main { background:#ffe5f1; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="brand">
+        <img src="iconoDanzaa.jpg" alt="Icono alusivo a danza contemporánea" class="brand-logo" />
+        <div>
+          <h1 id="hero-title">Isadora Duncan</h1>
+          <p class="muted">Pionera y <span class="underline">creadora de la danza contemporánea</span></p>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <ul class="nav-list container">
+          <li class="nav-item"><a class="nav-link" href="#vida">Vida</a></li>
+          <li class="nav-item"><a class="nav-link" href="#obra">Obra</a></li>
+          <li class="nav-item"><a class="nav-link" href="#legado">Legado</a></li>
+          <li class="nav-item"><a class="nav-link" href="#recursos">Recursos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://es.wikipedia.org/wiki/Isadora_Duncan" target="_blank" rel="noopener">Wikipedia</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.britannica.com/biography/Isadora-Duncan" target="_blank" rel="noopener">Britannica</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main container" id="inicio">
+    <section class="hero section">
+      <div>
+        <h2 class="section-title" id="hero-heading">
+          <span class="badge">Biografía</span> ¿Quién fue Isadora Duncan?
+        </h2>
+        <p>
+          Angela Isadora Duncan (1877–1927) fue una bailarina y coreógrafa estadounidense cuya
+          búsqueda de libertad de movimiento y expresión artística
+          redefinió la danza escénica de su tiempo. Rechazó el ballet académico rígido,
+          bailando descalza con túnicas inspiradas en la Grecia clásica, y creó
+          un lenguaje corporal natural que se considera el origen de la
+          <strong>danza contemporánea</strong>.
+        </p>
+        <a class="btn" href="#obra">Ver su obra</a>
+      </div>
+      <div class="figure">
+    
+        <img src="isadoraLibertad.jpg" class="hero-img hide-on-small" alt="Isadora Duncan posando con túnica"/>
+        <div class="figcaption">Duncan siendo libre por medio de la danza.</div>
+      </div>
+    </section>
+
+    <section class="section" id="vida" aria-labelledby="vida-title">
+      <h2 class="section-title" id="vida-title">
+        <span class="badge">Vida</span> Línea del tiempo
+      </h2>
+
+      <div class="grid">
+        <article class="article col-8">
+          <h3>Momentos clave</h3>
+          <ol class="list list-box">
+            <li><strong>1877:</strong> Nace en San Francisco, California.</li>
+            <li><strong>1900–1902:</strong> Desarrolla en Europa su estilo basado en el movimiento natural.</li>
+            <li><strong>1904:</strong> Funda su primera escuela de danza en Berlín.</li>
+            <li><strong>1909–1913:</strong> Gira internacional; afianza su fama e influencia.</li>
+            <li><strong>1921:</strong> Abre escuela en Moscú invitada por las autoridades culturales.</li>
+            <li><strong>1927:</strong> Fallece en Niza, Francia.</li>
+          </ol>
+          <p class="muted">Su vida estuvo marcada por la innovación artística, viajes y la docencia.</p>
+        </article>
+
+        <aside class="card col-4">
+          <div class="figure">
+            <img src="DuncanBailando.png" alt="Isadora Duncan danzando"/>
+            <div class="figcaption">Danza con líneas fluidas y respiración del movimiento.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="obra" aria-labelledby="obra-title">
+      <h2 class="section-title" id="obra-title">
+        <span class="badge">Obra</span> Estilo y aportaciones
+      </h2>
+
+      <div class="grid">
+        <article class="article col-8">
+          <h3>Rasgos de su lenguaje</h3>
+          <ul class="list list-box--dotted">
+            <li>Movimiento desde el <em>centro</em> del cuerpo y la respiración.</li>
+            <li>Descalza, con túnicas: énfasis en naturalidad y musicalidad.</li>
+            <li>Inspiración en arte y mitología griegas.</li>
+            <li>Improvisación y emoción como ejes expresivos.</li>
+          </ul>
+
+          <p>Isadora concebía la danza como un arte <span class="underline">libre y vital</span>, no subordinado a la técnica rígida. Coreografió piezas sobre música de
+            compositores como Chopin, Gluck, Beethoven y Schubert.
+          </p>
+        </article>
+
+        <aside class="card col-4">
+          <div class="figure">
+            <img src="estudiantesIsadora.jpg">
+            <div class="figcaption">Formación integral y creatividad por medio de la danza.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="legado" aria-labelledby="legado-title">
+      <h2 class="section-title" id="legado-title">
+        <span class="badge">Legado</span> Influencia y recepción
+      </h2>
+
+      <article class="article">
+        <p>
+          La influencia de Duncan alcanzó a generaciones de creadoras y creadores que cimentaron la
+          danza moderna y contemporánea. Su visión artística defendió la libertad, la
+          individualidad y la conexión entre emoción y movimiento.
+        </p>
+        <div class="list-box" style="text-align:center">
+          <p><strong>Frase guía:</strong> <span class="accent">“Mi arte es un esfuerzo por expresar en movimientos bellos el sentimiento humano más noble.”</span></p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="recursos" aria-labelledby="recursos-title">
+      <h2 class="section-title" id="recursos-title"><span class="badge">Recursos</span> Para saber más</h2>
+
+      <div class="grid">
+        <div class="col-8">
+          <ul class="list">
+            <li><a class="btn" href="https://es.wikipedia.org/wiki/Isadora_Duncan" target="_blank" rel="noopener">Entrada en Wikipedia</a></li>
+            <li><a class="btn" href="https://www.britannica.com/biography/Isadora-Duncan" target="_blank" rel="noopener">Biografía en Britannica</a></li>
+            <li><a class="btn" href="#contacto">Contáctame</a></li>
+          </ul>
+        </div>
+        <div class="col-4 figure">
+          <img src="posterD.jpg" alt="Afiche antiguo anunciando una presentación de Isadora Duncan" />
+          <div class="figcaption">Afiche histórico de presentación.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contacto" aria-labelledby="contacto-title">
+      <h2 class="section-title" id="contacto-title"><span class="badge">Contacto</span> Escríbeme</h2>
+
+      <form class="form" action="#" method="post">
+        <div class="form-row">
+          <div>
+            <label class="label" for="nombreInput">Nombre</label>
+            <input class="input" id="nombreInput" name="nombre" type="text" placeholder="Tu nombre completo" required />
+          </div>
+          <div>
+            <label class="label" for="emailInput">Correo</label>
+            <input class="input" id="emailInput" name="email" type="email" placeholder="tucorreo@ejemplo.com" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="label" for="asuntoInput">Asunto</label>
+          <input class="input" id="asuntoInput" name="asunto" type="text" placeholder="Consulta, comentario, etc." />
+        </div>
+
+        <div>
+          <label class="label" for="mensajeInput">Mensaje</label>
+          <textarea class="input textarea" id="mensajeInput" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+
+        <button class="btn" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Página estudiantil sobre Isadora Duncan</p>
+      <p>Imágenes de demostración para fines académicos.</p>
+      <p>Más sobre danza contemporánea en <a href="https://www.moma.org/magazine/articles/799" target="_blank" rel="noopener">MoMA Magazine</a>.</p>
+    </div>
+  </footer>
+</body>
+</html>
