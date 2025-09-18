@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación HTML</title>
+</head>
+<body>
+    <h1>Diferencias entre etiquetas en HTML</h1>
+    
+    <h2>&lt;b&gt;&lt;/b&gt; vs. &lt;strong&gt;&lt;/strong&gt;</h2>
+    <p><strong>Visualmente:</strong><br>
+    Ambas muestran el texto en negritas. A simple vista no hay diferencia.</p>
+    
+    <p><strong>Semántica:</strong><br>
+    • &lt;b&gt; → Solo cambia el estilo (negritas), sin dar importancia al contenido.<br>
+    • &lt;strong&gt; → Además de poner negritas, indica énfasis fuerte / importancia semántica.</p>
+    
+    <p><strong>Google:</strong> Tiende a dar más peso al texto dentro de &lt;strong&gt; que al de &lt;b&gt;, porque entiende que es relevante para el contexto de la página.</p>
+
+    <h2>&lt;i&gt;&lt;/i&gt; vs. &lt;em&gt;&lt;/em&gt;</h2>
+    <p><strong>Visualmente:</strong><br>
+    Ambos muestran el texto en cursiva.</p>
+    
+    <p><strong>Semántica:</strong><br>
+    • &lt;i&gt; → Solo cambia el estilo (cursiva)<br>
+    • &lt;em&gt; → Además de cursiva, da un énfasis semántico, como si "resaltara" una palabra clave en el discurso.</p>
+    
+    <p><strong>Google:</strong> El texto dentro de &lt;em&gt; puede interpretarse como más relevante que en &lt;i&gt;.</p>
+
+    <h2>&lt;s&gt;&lt;/s&gt; vs. &lt;del&gt;&lt;/del&gt;</h2>
+    <p><strong>Visualmente:</strong><br>
+    Ambos muestran el texto con una línea tachada.</p>
+    
+    <p><strong>Semántica:</strong><br>
+    • &lt;s&gt; → Solo indica un cambio visual (tachado), normalmente para mostrar algo incorrecto o irrelevante.<br>
+    • &lt;del&gt; → Además de tachar, indica que el texto fue eliminado o sustituido (ej. en actualizaciones de precios o versiones de un documento).</p>
+    
+    <p><strong>Google:</strong> Interpreta mejor &lt;del&gt; como contenido eliminado, lo que puede ser útil en sitios de e-commerce.</p>
+<p>
+    <h1>
+        Investigar qué son los elementos de línea y elementos de bloque. Poner por lo menos 5 ejemplos de cada uno.
+    </h1>
+    </p>
+
+    <h2>
+        ¿Qué son los Elementos de Bloque?
+    </h2>
+    <h3>
+        Un elemento de bloque es aquel que siempre comienza en una nueva línea y ocupa todo el ancho disponible de su contenedor (su elemento padre), estirándose hacia la izquierda y la derecha tanto como pueda.
+    </h3>
+<h4>5 ejemplos de Elementos de Bloque</h4>
+    
+    <ol>
+        <li>
+            <strong>&lt;div&gt;</strong>: Se usa para agrupar contenido y crear layouts.
+        </li>
+        <li>
+            <strong>&lt;p&gt;</strong> (Párrafo): Define un párrafo de texto. Siempre tiene margen por arriba y por abajo por defecto.
+        </li>
+        <li>
+            <strong>&lt;h1&gt;, &lt;h2&gt;, ..., &lt;h6&gt;</strong> (Encabezados): Los títulos de sección. &lt;h1&gt; es el más importante y &lt;h6&gt; el menos importante.
+        </li>
+        <li>
+            <strong>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</strong> (Listas): 
+            <ul>
+                <li>&lt;ul&gt; para listas desordenadas (con viñetas)</li>
+                <li>&lt;ol&gt; para listas ordenadas (con números)</li>
+                <li>&lt;li&gt; para cada item de la lista</li>
+            </ul>
+        </li>
+        <li>
+            <strong>&lt;section&gt;, &lt;article&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;nav&gt;</strong> (Elementos semánticos de HTML5): Etiquetas que definen secciones específicas de una página, comportándose como bloques.
+        </li>
+    </ol>
+    <h2>
+        ¿Qué son los Elementos de Línea?
+    </h2>
+    <h3>
+        Un elemento de línea (inline element) es aquel que no forza un salto de línea y solo ocupa el ancho que su contenido necesita.
+    </h3>
+    <h4>5 ejemplos de Elementos de Línea</h4>
+    
+    <ol>
+        <li>
+            <strong>&lt;span&gt;</strong>: El contenedor genérico en línea. Se usa para aplicar estilo a una parte específica de un texto o contenido.
+        </li>
+        <li>
+            <strong>&lt;a&gt;</strong> (Anchor - Enlace): Define un hipervínculo.
+        </li>
+        <li>
+            <strong>&lt;strong&gt; y &lt;em&gt;</strong>: Etiquetas semánticas para dar énfasis fuerte y énfasis, respectivamente.
+        </li>
+        <li>
+             <strong>&lt;img&gt;</strong> (Image): Para insertar imágenes. Es un elemento de línea reemplazado y especial porque sí puedes cambiar su width y height.
+        </li>
+        <li>
+            <strong>&lt;br&gt;</strong> (Line Break - Salto de línea): Forza un salto de línea dentro de un texto o un elemento de bloque. Es un elemento vacío (sin etiqueta de cierre).
+        </li>
+    </ol>
+
+
+
+    <h1>Elementos de Formulario HTML</h1>
+    <p>A continuación se muestran diferentes tipos de campos de formulario con ejemplos prácticos:</p>
+    
+
+    <form action="/procesar-formulario" method="POST">
+       
+        <h3>Campo de Texto (input type="text")</h3>
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+        <p><strong>Ejemplo:</strong> Para nombres, apellidos, direcciones, etc.</p>
+
+        <h3>Campo de Email (input type="email")</h3>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        <p><strong>Ejemplo:</strong> Se valida automáticamente que tenga formato de email válido</p>
+
+     
+        <h3>Campo de Contraseña (input type="password")</h3>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" minlength="8" required>
+        <p><strong>Ejemplo:</strong> Los caracteres se ocultan por seguridad</p>
+
+        <h3>Campo Numérico (input type="number")</h3>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" min="18" max="100" placeholder="Entre 18 y 100 años">
+        <p><strong>Ejemplo:</strong> Solo acepta números, con valores mínimo y máximo</p>
+
+        <h3>Casillas de Verificación (input type="checkbox")</h3>
+        <label>Intereses:</label><br>
+        <input type="checkbox" id="deportes" name="intereses" value="deportes">
+        <label for="deportes">Deportes</label><br>
+        <input type="checkbox" id="musica" name="intereses" value="musica">
+        <label for="musica">Música</label><br>
+        <input type="checkbox" id="tecnologia" name="intereses" value="tecnologia">
+        <label for="tecnologia">Tecnología</label>
+        <p><strong>Ejemplo:</strong> Permite selección múltiple de opciones</p>
+
+        <h3>Botones de Opción (input type="radio")</h3>
+        <label>Género:</label><br>
+        <input type="radio" id="masculino" name="genero" value="masculino">
+        <label for="masculino">Masculino</label><br>
+        <input type="radio" id="femenino" name="genero" value="femenino">
+        <label for="femenino">Femenino</label>
+        <p><strong>Ejemplo:</strong> Solo permite una selección entre las opciones</p>
+
+        <h3>Lista Desplegable (select y option)</h3>
+        <label for="pais">País de residencia:</label>
+        <select id="pais" name="pais" required>
+            <option value="">Seleccione un país</option>
+            <option value="mx">México</option>
+            <option value="es">España</option>
+            <option value="ar">Argentina</option>
+            <option value="co">Colombia</option>
+        </select>
+        <p><strong>Ejemplo:</strong> Lista desplegable con múltiples opciones</p>
+
+        <h3>Área de Texto (textarea)</h3>
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+        <p><strong>Ejemplo:</strong> Para textos largos, comentarios o descripciones</p>
+
+        <h3>Barra de Progreso (progress)</h3>
+        <label>Progreso del perfil:</label><br>
+        <progress value="75" max="100">75% completado</progress>
+        <p><strong>Ejemplo:</strong> Muestra el progreso de una tarea (75% completado)</p>
+
+        <h3>Resultado de Cálculo (output)</h3>
+        <label for="rango">Nivel de satisfacción:</label><br>
+        <input type="range" id="rango" name="satisfaccion" min="0" max="100" value="50" 
+               oninput="resultado.value = this.value + '%'">
+        <output name="resultado" for="rango">50%</output>
+        <p><strong>Ejemplo:</strong> Muestra el resultado del slider (50% actualmente)</p>
+
+        <input type="submit" value="Enviar Formulario">
+    </form>
+
+
+</body>
+</html>
