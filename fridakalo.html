@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frida Kahlo — Vida y Obra (Plantilla)</title>
+  
+  <!-- Para esta tarea, el CSS va dentro del <head> usando <style> -->
+  <style>
+    /* Selectores de etiqueta permitidos */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 0; color: #222; background: #f7f7f7; line-height: 1.6; }
+    p { margin: 0 0 1rem; }
+    h1, h2, h3 { margin: 0 0 .5rem; line-height: 1.25; }
+
+    /* Todo lo demás con clases (y un único id estilado más abajo) */
+    .container { max-width: 980px; margin: 0 auto; padding: 1rem; }
+
+    .site-header { background: #0d3b66; color: #fff; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+    .site-header .brand { display: flex; align-items: center; justify-content: center; }
+
+    .nav-list { list-style: none; margin: .75rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; }
+    .nav-list a { color: #fff; text-decoration: none; padding: .4rem .6rem; border-radius: 8px; border: 2px solid transparent; transition: color .2s, background .2s, border-color .2s; }
+    .nav-list a:hover { background: #173f74; color: #ffd166; border-color: #ffd166; }
+
+    /* ÚNICO elemento estilado por id */
+    #site-title { letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+
+    .main-area { padding: 1rem 0 2rem; }
+
+    .card { background: #fff; padding: 1rem; margin: 1rem 0; border: 2px solid #e2e8f0; border-radius: 12px; box-shadow: 0 6px 14px rgba(0,0,0,.06); }
+    .card.dotted { border-style: dotted; border-color: #66a0b8; }
+
+    .center { text-align: center; }
+    .underline { text-decoration: underline; }
+    .highlight { background: #fff3cd; padding: 0 .2rem; border-radius: .2rem; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .img-responsive { width: 100%; height: auto; border-radius: 12px; border: 2px solid #cfd8e3; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+    .small { max-width: 420px; }
+
+    .field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: .85rem; }
+    .input { padding: .55rem .75rem; border: 2px solid #b8c1cc; border-radius: 8px; transition: box-shadow .2s, border-color .2s; }
+    .input:focus { outline: none; border-color: #118ab2; box-shadow: 0 0 0 3px rgba(17,138,178,.2); }
+
+    .btn { background: #118ab2; color: #fff; border: 2px solid #0a6b8a; padding: .6rem 1rem; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+    .btn:hover { background: #ffd166; color: #0a6b8a; border-color: #ffd166; }
+
+    .site-footer { background: #0d3b66; color: #fff; }
+    .site-footer a { color: #ffd166; }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+
+    /* Requisitos de responsive / media queries */
+    @media (max-width: 700px) {
+      /* Indica en tu video que aplicas el media query sobre <main>. */
+      .main-area { background-color: #fff7e6; }
+    }
+    @media (max-width: 400px) {
+      /* Oculta UNA imagen cuando el ancho sea < 400px */
+      .hide-on-small { display: none; }
+    }
+    @media (max-width: 300px) {
+      .main-area { background-color: #ffe6e6; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <h1 id="site-title">Frida Kahlo — Vida y Obra</h1>
+      </div>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#vida">Vida</a></li>
+          <li><a href="#obra">Obra</a></li>
+          <li><a href="#legado">Legado</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <!-- Enlaces externos: abren en nueva pestaña -->
+          <li><a href="https://www.museofridakahlo.org.mx/" target="_blank" rel="noopener noreferrer">Sitio oficial</a></li>
+          <li><a href="https://es.wikipedia.org/wiki/Frida_Kahlo" target="_blank" rel="noopener noreferrer">Wikipedia</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-area">
+    <div class="container">
+      <section id="vida" class="card">
+        <h2>Vida</h2>
+        <article>
+          <p>Frida Kahlo (1907–1954) fue una pintora <span class="highlight underline">mexicana</span> conocida por sus autorretratos y su estilo único. <strong>Este texto es de ejemplo:</strong> cámbialo por la biografía de la persona que elijas.</p>
+          <div class="center">
+            <img class="img-responsive small" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Frida_Kahlo%2C_by_Guillermo_Kahlo.jpg" alt="Retrato fotográfico de Frida Kahlo de joven" />
+          </div>
+        </article>
+        <hr />
+        <div class="card dotted">
+          <h3>Breve línea del tiempo</h3>
+          <ol>
+            <li>1907 — Nace en Coyoacán.</li>
+            <li>1925 — Accidente que marca su vida y obra.</li>
+            <li>1939 — Exposición en París.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="obra" class="card">
+        <h2>Obra destacada</h2>
+        <article>
+          <p>Algunas obras representativas (usa una <strong>ul</strong> con <strong>li</strong>):</p>
+          <ul>
+            <li>Las dos Fridas (1939)</li>
+            <li>Autorretrato con collar de espinas (1940)</li>
+            <li>La columna rota (1944)</li>
+          </ul>
+
+          <div class="gallery">
+            <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/1/10/Frida_Kahlo_-_Las_dos_Fridas_-_1939.jpg" alt="Pintura 'Las dos Fridas' con dos figuras sentadas" />
+            <img class="img-responsive hide-on-small" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Frida_Kahlo%2C_Me_and_My_Parrots.jpg" alt="Pintura 'Yo y mis pericos' con autorretrato y pájaros" />
+            <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/commons/6/64/Frida_Kahlo_-_The_Broken_Column.jpg" alt="Pintura 'La columna rota' con corsé y paisaje árido" />
+          </div>
+        </article>
+      </section>
+
+      <section id="legado" class="card">
+        <h2>Legado e influencia</h2>
+        <article>
+          <p>Explica por qué esta persona es importante hoy. Incluye un <span class="underline">dato clave subrayado</span> o una cita.</p>
+        </article>
+      </section>
+
+      <section id="contacto" class="card">
+        <h2>Contacto</h2>
+        <p>Incluye un <strong>form</strong> de ejemplo (no tiene que enviar nada):</p>
+        <form action="#" method="get" class="contact-form" aria-label="Formulario de contacto de ejemplo">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" class="input" type="text" name="nombre" placeholder="Tu nombre" />
+          </div>
+          <div class="field">
+            <label for="email">Correo</label>
+            <input id="email" class="input" type="email" name="email" placeholder="tucorreo@ejemplo.com" />
+          </div>
+          <div class="field">
+            <label for="mensaje">Mensaje</label>
+            <input id="mensaje" class="input" type="text" name="mensaje" placeholder="Escribe tu mensaje" />
+          </div>
+          <button class="btn" type="submit">Enviar</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="center">&copy; 2025 — Página de ejemplo para clase. Reemplaza los textos e imágenes por los de tu personaje.</p>
+      <p class="center">Más recursos: <a href="https://www.britannica.com/" target="_blank" rel="noopener noreferrer">Encyclopedia Britannica</a></p>
+    </div>
+  </footer>
+</body>
+</html>
