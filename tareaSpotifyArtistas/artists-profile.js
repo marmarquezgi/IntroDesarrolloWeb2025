@@ -43,7 +43,7 @@ function addArtistResponse(container, data) {
   const popularity = document.createElement("p");
   popularity.className = "card-text";
   popularity.innerHTML = `<small class="text-muted"><strong>Popularidad:</strong> ${data.popularity ?? 0}/100</small>`;
-
+//Agregamos todo para que lo despliegue y lo podamos ver en pantalla
   cardBody.append(title, genres, followers, popularity);
   bodyCol.appendChild(cardBody);
   row.append(imgCol, bodyCol);
@@ -51,8 +51,6 @@ function addArtistResponse(container, data) {
   container.appendChild(card);
 }
 
-//-------------------------------------------------------------------------------
-// Purpose: Fetch and display Spotify artist information using Spotify Web API
 document.getElementById("fetch-btn").addEventListener("click", async () => {
   const token = document.getElementById("token").value.trim();
   const artistId = document.getElementById("artist-preset").value.trim();
