@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    function obtenerInformacion(){
+const URL ="https://fabianorduna.github.io/intro-al-desarrollo-web/Javascript/JSON/dia-muertos.json";
+fetch(URL)
+.then((response)=>{
+console.log("Respuesta recibida"; { response});
+return response.json();
+})
+.then ((data)=>console.log(data)){
+    .catch(function(error){
+     console.log("Error :("));  
+    }
+}
+.then((data)=>{
+    document
+    .getElementById("contenid-muertos")
+    .classList.remove("d-none");
+}
+//Añadir contenido de la llamada a la API
+
+
+  </script>
+</head>
+</html>

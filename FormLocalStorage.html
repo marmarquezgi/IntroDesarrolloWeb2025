@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario con localStorage</title>
+</head>
+<body>
+  <h1>Formulario con eventos de JS!!</h1>
+
+  <form onsubmit="guardarDatos(); return false;">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre" />
+    </div>
+
+    <div class="mb-3">
+      <label for="edad" class="form-label">Edad</label>
+      <input type="text" class="form-control" id="edad" />
+    </div>
+
+    <div class="mb-3">
+      <label for="dia" class="form-label">Día de la semana favorito</label>
+      <select id="dia" class="form-select">
+        <option value="" selected disabled>Elige un día</option>
+        <option value="Lunes">Lunes</option>
+        <option value="Martes">Martes</option>
+        <option value="Miércoles">Miércoles</option>
+        <option value="Jueves">Jueves</option>
+        <option value="Viernes">Viernes</option>
+        <option value="Sábado">Sábado</option>
+        <option value="Domingo">Domingo</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+
+  <p id="mensaje" style="display: none; margin-top:20px; font-weight:bold;"></p>
+  <script src="script.js"></script>
+</body>
+</html>

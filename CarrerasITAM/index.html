@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carreras - ITAM</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .itam-header { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .itam-logo { height: 60px; }
+        .itam-nav-link { color: #333; font-weight: 500; padding: 10px 15px; }
+        .itam-nav-link:hover { color: #8b0000; }
+
+        .hero-section{
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                        url('https://via.placeholder.com/1920x600/8b0000/FFFFFF?text=ITAM') center/cover no-repeat;
+            color: white; padding: 80px 0; text-align: center;
+        }
+
+        .section-title { color: #8b0000; font-weight: bold; margin-bottom: 30px; position: relative; }
+        .section-title:after { content:''; position:absolute; bottom:-10px; left:0; width:60px; height:3px; background-color:#8b0000; }
+
+        .career-card { border:none; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1); transition:transform .3s; margin-bottom:30px; height:100%; }
+        .career-card:hover { transform: translateY(-5px); box-shadow:0 8px 16px rgba(0,0,0,0.2); }
+        .career-img { height:180px; object-fit:cover; border-radius:8px 8px 0 0; }
+        .career-title { color:#8b0000; font-weight:bold; }
+        .btn-itam { background-color:#8b0000; color:#fff; border:none; padding:10px 20px; border-radius:4px; }
+        .btn-itam:hover { background-color:#6a0000; color:#fff; }
+
+        .info-section { background-color:#f8f9fa; padding:50px 0; } /* se usa más abajo (contacto) */
+        .info-card { background:#fff; border-radius:8px; padding:25px; box-shadow:0 4px 8px rgba(0,0,0,0.1); height:100%; text-align:center; }
+
+        .footer{ background-color:#333; color:#fff; padding:40px 0 20px; }
+        .footer-links h5{ color:#fff; margin-bottom:15px; }
+        .footer-links ul{ list-style-type:none; padding-left:0; }
+        .footer-links li{ margin-bottom:8px; }
+        .footer-links a{ color:#ccc; text-decoration:none; }
+        .footer-links a:hover{ color:#fff; text-decoration:underline; }
+        .footer-bottom{ border-top:1px solid #555; padding-top:15px; margin-top:25px; }
+        .social-icons a{ color:#fff; font-size:18px; margin-right:12px; }
+        .social-icons a:hover{ color:#8b0000; }
+
+        .joint-programs { background-color:#fff; padding:50px 0; }
+        .joint-programs-content { background-color:#f8f9fa; border-radius:8px; padding:35px; }
+
+        .careers-section { padding:50px 0; }
+
+
+        @media (max-width:768px){ .hero-section{ padding:60px 0; } .career-img{ height:150px; } }
+        @media (max-width:576px){ .hero-section{ padding:40px 0; } .career-img{ height:130px; } }
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <header class="itam-header sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">
+                    <img src="itaammm.png" alt="ITAM" class="itam-logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link itam-nav-link" href="#">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link itam-nav-link active" href="#">Nuestras carreras</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link itam-nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Admisiones</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Licenciatura</a></li>
+                                <li><a class="dropdown-item" href="#">Posgrado</a></li>
+                                <li><a class="dropdown-item" href="#">Educación Ejecutiva</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link itam-nav-link" href="#">Vida universitaria</a></li>
+                        <li class="nav-item"><a class="nav-link itam-nav-link" href="#">Intercambio académico</a></li>
+                        <li class="nav-item"><a class="nav-link itam-nav-link" href="#">Estudiantes foráneos</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <style>
+        .itam-header {
+            background-color: #004d40; /* verde ITAM oscuro */
+        }
+    
+      
+        .itam-logo {
+            height: 80px;
+        }
+    
+
+        .itam-nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 15px 20px;
+        }
+    
+        .itam-nav-link:hover {
+            color: #c8e6c9 !important;
+        }
+    
+        /* Link activo con subrayado */
+        .itam-nav-link.active {
+            border-bottom: 2px solid white;
+        }
+    
+        /* Ajuste del dropdown */
+        .dropdown-menu {
+            background-color: #004d40;
+        }
+    
+        .dropdown-item {
+            color: white;
+        }
+    
+        .dropdown-item:hover {
+            background-color: #00695c; 
+            color: #fff;
+        }
+    </style>
+    <!-- Sección Hero -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="display-4 fw-bold mb-4 text-white">Carreras ITAM</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero-section {
+        background: url("amigos.png") center/cover no-repeat;
+        padding: 120px 0; 
+        text-align: center;
+        position: relative;
+    }
+
+
+    .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 1;
+    }
+
+    .hero-section h1 {
+        position: relative;
+        z-index: 2; 
+    }
+</style>
+
+
+<section class="careers-section" id="carreras">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-12 text-center">
+        </div>
+      </div>
+  
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="actuaria.jpeg" onerror="this.src='https://carreras.itam.mx/wp-content/uploads/licenciaturas/plan-de-estudios/plan-de-estudios-licenciatura-actuaria.pdf';" alt="Actuaría">
+            </div>
+            <h3 class="career-title">Actuaría</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 2 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="negocios.jpeg"; alt="Administración de Negocios">
+            </div>
+            <h3 class="career-title">Administración de Negocios</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 3 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="datos.jpeg" ; alt="Ciencia de Datos">
+            </div>
+            <h3 class="career-title">Ciencia de Datos</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 4 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="cpol.jpeg" ;alt="Ciencia Política">
+            </div>
+            <h3 class="career-title">Ciencia Política</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 5 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="conta.jpeg" ; alt="Contaduría Pública">
+            </div>
+            <h3 class="career-title">Contaduría Pública</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 6 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="derecho.jpeg" ;alt="Ingeniería en Computación">
+            </div>
+            <h3 class="career-title">Derecho</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 7 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="finanzas.jpeg" ; alt="Matemáticas Aplicadas">
+            </div>
+            <h3 class="career-title">Direccion Financiera</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+  
+        <!-- Card 8 -->
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <article class="career-card">
+            <div class="career-img-wrap">
+              <img src="merca.jpeg" ; alt="Relaciones Internacionales">
+            </div>
+            <h3 class="career-title">Direccion de mercadotecnia</h3>
+            <a class="plan-link" href="#">
+              <i class="fa-regular fa-file-pdf"></i>
+              <span>PLAN DE<br>ESTUDIOS</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Estilos específicos para las tarjetas -->
+  <style>
+    /* Fondo general suave (mint) como en ITAM */
+    .careers-section {
+      padding: 48px 0 64px;
+      background: #dcefe8; /* verde muy claro */
+    }
+  
+    /* Tarjeta */
+    .career-card {
+      background: #f6fbf9;             /* casi blanco con tinte verde */
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      padding: 18px 22px 22px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .career-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 32px rgba(0,0,0,.12);
+    }
+  
+    /* Imagen superior */
+    .career-img-wrap {
+      background: #e9ecef;
+      border-radius: 12px;
+      overflow: hidden;
+      height: 150px;                    /* alto uniforme como en la referencia */
+      margin: 6px 6px 18px;
+    }
+    .career-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;                /* ajusta la foto al contenedor */
+    }
+  
+    /* Título en verde */
+    .career-title {
+      color: #0a5c48;                   /* verde ITAM oscuro */
+      font-weight: 800;
+      font-size: 1.6rem;
+      line-height: 1.25;
+      text-align: center;
+      margin: 6px 10px 18px;
+    }
+  
+    /* Enlace PLAN DE ESTUDIOS */
+    .plan-link {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #2f3b37;
+      margin: 6px 4px 0;
+      padding: 8px 6px;
+    }
+    .plan-link i {
+      font-size: 22px;
+      opacity: .85;
+    }
+    .plan-link span {
+      font-weight: 700;
+      letter-spacing: .25rem;           /* espaciado de letras como en la imagen */
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+    .plan-link:hover span { opacity: .85; }
+  
+    /* Ajustes en pantallas pequeñas */
+    @media (max-width: 575.98px) {
+      .career-img-wrap { height: 130px; }
+      .career-title { font-size: 1.35rem; }
+      .plan-link span { letter-spacing: .18rem; }
+    }
+  </style>
+  
+  <!-- Font Awesome para el ícono del PDF (si no lo tienes ya en tu head) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+
+  <section class="pc-section">
+    <div class="container">
+      <div class="row align-items-start gy-4">
+        <!-- Columna izquierda: título grande en verde -->
+        <div class="col-lg-5">
+          <h2 class="pc-title">
+            Programas<br>conjuntos
+          </h2>
+        </div>
+  
+        <!-- Columna derecha: texto + video -->
+        <div class="col-lg-7">
+          <p class="pc-lead">
+            En el <strong>ITAM</strong>, nuestros <strong>programas conjuntos</strong> te permiten estudiar dos carreras simultáneamente; con ello, optimizas tu tiempo y amplías tus habilidades. Esta opción está diseñada para ofrecerte una formación integral en dos disciplinas distintas, lo que te permite adquirir una amplia gama de conocimientos y prepararte para diversas oportunidades profesionales.
+          </p>
+  
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe
+              src="https://www.youtube.com/embed/2ja2c3cMWBk"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    /* Sección */
+    .pc-section {
+      padding: 56px 0;
+      background: #fff;
+    }
+  
+    /* Título verde grande (izquierda) */
+    .pc-title {
+      color: #6fbf4b;                  /* verde tipo ITAM */
+      font-weight: 800;
+      line-height: 1.05;
+      margin: 0;
+      /* tamaño fluido: entre 42px y 64px aprox */
+      font-size: clamp(2.625rem, 2.2rem + 1.5vw, 4rem);
+    }
+  
+    /* Texto de la derecha */
+    .pc-lead {
+      color: #1f2e2b;
+      margin: 0;
+      font-weight: 500;
+      line-height: 1.9;
+      /* tamaño fluido: entre 18px y 22px aprox */
+      font-size: clamp(1.125rem, 1.05rem + 0.5vw, 1.375rem);
+    }
+  
+    /* Video responsivo: usa la utilidad Bootstrap ratio.
+       Si no usas Bootstrap 5, reemplaza por el patrón padding-top. */
+    .ratio { border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,.08); }
+  
+    /* Ajustes móviles: apila y centra */
+    @media (max-width: 991.98px) {
+      .pc-title { text-align: left; margin-bottom: 8px; }
+    }
+  </style>
+  
+
+
+    
+  <section class="pc-section">
+    <div class="container">
+      <div class="row align-items-start gy-4">
+        <!-- Izquierda: título grande en verde -->
+        <div class="col-lg-5">
+          <h2 class="pc-title">Programas<br>conjuntos</h2>
+        </div>
+  
+        <!-- Derecha: texto + video -->
+        <div class="col-lg-7">
+          <p class="pc-lead">
+            En el <strong>ITAM</strong>, nuestros <strong>programas conjuntos</strong> te permiten estudiar dos carreras simultáneamente; con ello, optimizas tu tiempo y amplías tus habilidades. Esta opción está diseñada para ofrecerte una formación integral en dos disciplinas distintas, lo que te permite adquirir una amplia gama de conocimientos y prepararte para diversas oportunidades profesionales.
+          </p>
+  
+          <!-- Video responsivo (Bootstrap 5) -->
+          <div class="ratio ratio-16x9 mt-3">
+            <iframe
+              src="https://www.youtube.com/embed/2ja2c3cMWBk"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    .pc-section{padding:56px 0;background:#fff;}
+    .pc-title{
+      color:#6fbf4b; font-weight:800; line-height:1.05; margin:0;
+      font-size:clamp(2.625rem,2.2rem + 1.5vw,4rem); /* ~42–64px */
+    }
+    .pc-lead{
+      color:#1f2e2b; margin:0; font-weight:500; line-height:1.9;
+      font-size:clamp(1.125rem,1.05rem + .5vw,1.375rem); /* ~18–22px */
+    }
+    .ratio{border-radius:12px; overflow:hidden; box-shadow:0 8px 22px rgba(0,0,0,.08);}
+  </style>
+  
+    <!-- Sección de contacto (se mantiene tal cual) -->
+
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- Columna 1: Logo y texto -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <img src="itaammm.png" alt="ITAM" class="mb-3" style="max-width:150px;">
+              <p>
+                En el ITAM nos proponemos contribuir a la formación integral de la persona 
+                y al desarrollo de una sociedad más libre, más justa y más próspera.
+              </p>
+              <div class="social-icons mt-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+              </div>
+            </div>
+      
+            <!-- Columna 2: Menú -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <h5>MENÚ</h5>
+              <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Nuestras carreras</a></li>
+                <li><a href="#">Admisión</a></li>
+                <li><a href="#">Becas y ayuda financiera</a></li>
+                <li><a href="#">Vida universitaria</a></li>
+                <li><a href="#">Intercambio académico</a></li>
+                <li><a href="#">Estudiantes foráneos</a></li>
+              </ul>
+            </div>
+      
+            <!-- Columna 3: Dirección -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5>DIRECCIÓN</h5>
+              <p>
+                Río Hondo No. 1<br>
+                Col. Progreso Tizapán<br>
+                CP. 01080 Alc. Álvaro Obregón,<br>
+                Ciudad de México
+              </p>
+            </div>
+      
+            <!-- Columna 4: Contacto -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h5>CONTACTO</h5>
+              <p>informes@itam.mx<br>55 5628 4028</p>
+            </div>
+          </div>
+      
+          <!-- Aviso de privacidad -->
+          <div class="footer-bottom text-center mt-3">
+            <a href="#" class="privacy-link">Aviso de privacidad</a>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+      .footer {
+        background-color: #00483c; /* verde ITAM */
+        color: #fff;
+        padding: 50px 0 30px;
+      }
+      
+      .footer h5 {
+        font-weight: 700;
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
+        padding-bottom: 8px;
+      }
+      
+      .footer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .footer ul li {
+        margin-bottom: 8px;
+      }
+      
+      .footer ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      .footer ul li a:hover {
+        text-decoration: underline;
+      }
+      
+      .footer p {
+        margin: 0 0 10px;
+      }
+      
+      .social-icons a {
+        display: inline-block;
+        color: #fff;
+        font-size: 20px;
+        margin-right: 12px;
+        transition: color 0.3s;
+      }
+      
+      .social-icons a:hover {
+        color: #a8e6cf; /* verde claro al pasar el mouse */
+      }
+      
+      .footer-bottom {
+        border-top: 1px solid rgba(255,255,255,0.2);
+        margin-top: 20px;
+        padding-top: 15px;
+      }
+      
+      .privacy-link {
+        color: #fff;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      </style>
+      
