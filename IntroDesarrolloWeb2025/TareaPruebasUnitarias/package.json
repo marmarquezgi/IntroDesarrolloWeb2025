@@ -1,0 +1,16 @@
+{
+  "name": "tareapruebasunitarias",
+  "version": "1.0.0",
+  "description": "Investigacion de algunas funciones usando jest",
+  "main": "funciones_varias.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}
